@@ -2,6 +2,10 @@
 
 A Socket IO App Running on a Google Cloud Platform VM.
 
+# Note
+
+Not yet working. Issue with setting up VM and getting a node socket server to listen for connection.
+
 # Get Code to Google Cloud E2 VM
 
 - https://javascript.plainenglish.io/deploy-a-node-js-server-using-google-cloud-compute-engine-87268919de20
