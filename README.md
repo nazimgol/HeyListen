@@ -19,3 +19,7 @@ The article above installs the following:
 5. sudo npm install -g pm2
 
 This allows a server to be run and accessed. Git is used to manually pull the code from this repo to the VM. 
+
+# Automated Startup Scripts
+
+https://cloud.google.com/compute/docs/instances/startup-scripts/linux
