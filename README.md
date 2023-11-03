@@ -49,6 +49,8 @@ server {
 - sudo su root
 - sudo npm install -g pm2
 - pm2 start server.js --watch
+- pm2 startup
+- pm2 save
 
 # Automated Startup Scripts
 
