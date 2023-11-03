@@ -30,7 +30,7 @@ server.listen(port, () => {
   console.log(`server running at http://localhost:${port}`);
 }); */
 
-const port = 8080;
+const port = 8000;
 server.listen(port, () => {
   console.log(`server running at http://localhost:${port}`);
 });
