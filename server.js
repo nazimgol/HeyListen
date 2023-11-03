@@ -22,6 +22,7 @@ io.on('connection', (socket) => {
 io.on('connection', (socket) => {
   socket.on('message', (msg) => {
     console.log('message: ' + msg);
+    socket.broadcast.emit('message', `${socket.id} says: ${msg}`);
   });
 });
 
