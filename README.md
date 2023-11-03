@@ -15,23 +15,40 @@ pm2 takes args to watch for file changes and restart programs: https://pm2.keyme
 pm2 restart app on server restart
 https://stackoverflow.com/questions/33638451/pm2-doesnt-launch-my-nodejs-app-after-server-restart
 
-# Get Code to Google Cloud E2 VM
+# VM Setup Commands
 
-- https://javascript.plainenglish.io/deploy-a-node-js-server-using-google-cloud-compute-engine-87268919de20
+Article: https://javascript.plainenglish.io/deploy-a-node-js-server-using-google-cloud-compute-engine-87268919de20
 
-The article above installs the following:
- 
-1. sudo apt-get -y update
+- sudo apt-get -y update
+- sudo apt-get install -y nodejs npm
+- sudo apt install git
+- git clone git_repo_name
+- cd repo_name
+- npm install
+- sudo apt-get install -y nginx
+- cd /etc/nginx/sites-available
+- sudo vim default
 
-2. sudo apt-get install -y nodejs npm
+```
+server {
+  listen 80;
+  server_name SERVER_IP_ADDRESS;
 
-3. sudo apt install git
+  location / {
+    proxy_pass "http://127.0.0.1:8080";
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_cache_bypass $http_upgrade;
+  }
+}
+```
 
-4. sudo apt-get install -y nginx
-
-5. sudo npm install -g pm2
-
-This allows a server to be run and accessed. Git is used to manually pull the code from this repo to the VM. 
+- sudo service nginx restart
+- cd ~/repo_name
+- sudo su root
+- sudo npm install -g pm2
+- pm2 start server.js --watch
 
 # Automated Startup Scripts
 
