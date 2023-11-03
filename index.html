@@ -17,6 +17,10 @@
       }
 
       send("test message from client.");
+
+      socket.on('message', (msg) => {
+        console.log(msg);
+      });      
     </script>
   </body>
 </html>
