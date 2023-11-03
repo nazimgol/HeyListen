@@ -2,10 +2,6 @@
 
 A Socket IO App Running on a Google Cloud Platform VM.
 
-# Note
-
-Not yet working. Issue with setting up VM and getting a node socket server to listen for connection.
-
 # Build new server on code push
 
 Use Github to push new server code to remote.
@@ -60,3 +56,7 @@ server {
 # Automated Startup Scripts
 
 https://cloud.google.com/compute/docs/instances/startup-scripts/linux
+
+# HTTPS/SSL Certificate Setup
+
+https://certbot.eff.org/instructions?ws=nginx&os=ubuntufocal
