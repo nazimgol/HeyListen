@@ -19,6 +19,8 @@ https://stackoverflow.com/questions/33638451/pm2-doesnt-launch-my-nodejs-app-aft
 
 Article: https://javascript.plainenglish.io/deploy-a-node-js-server-using-google-cloud-compute-engine-87268919de20
 
+Comands for Ubuntu 20 LTS
+
 - sudo apt-get -y update
 - sudo apt-get install -y nodejs npm
 - sudo apt install git
@@ -51,6 +53,9 @@ server {
 - pm2 start server.js --watch
 - pm2 startup
 - pm2 save
+- sudo snap install --classic certbot
+- sudo ln -s /snap/bin/certbot /usr/bin/certbot
+
 
 # Automated Startup Scripts
 
