@@ -33,19 +33,9 @@ Comands for Ubuntu 20 LTS
 - sudo snap install --classic certbot
 - sudo ln -s /snap/bin/certbot /usr/bin/certbot
 
-# Version Control
-
-## Server
-- mkdir heylisten.git
-- cd heylisten.git
-- git --bare init
-
-## Client
-- git remote add server root@socket.rch.app:~/heylisten.git
-- git push server main
-
 # Github Workflow to Push Using SSH to Remote Repo
 - https://dev.to/s1hofmann/github-actions-ssh-deploy-setup-l7h
+- On push the .github/workflow/deploy command runs and uses rsync to send files to the remote server.
 
 # Automated Startup Scripts
 
