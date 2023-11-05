@@ -25,7 +25,7 @@ Comands for Ubuntu 20 LTS
 - npm install
 - sudo apt-get install -y nginx
 - sudo rm /etc/nginx/sites-enabled/default
-- sudo ln -s ~/heylisten/socket.rch.app.conf /etc/nginx/sites-enabled/socket.rch.app.conf
+- sudo ln -s ~/heylisten.git/socket.rch.app.conf /etc/nginx/sites-enabled/socket.rch.app.conf
 - sudo service nginx restart
 - cd ~/repo_name
 - sudo npm install -g pm2
