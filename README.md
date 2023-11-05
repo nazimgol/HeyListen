@@ -24,34 +24,16 @@ Comands for Ubuntu 20 LTS
 - cd repo_name
 - npm install
 - sudo apt-get install -y nginx
-- cd /etc/nginx/sites-available
-- sudo vim default
-
-```
-server {
-  listen 80;
-  server_name SERVER_IP_ADDRESS;
-
-  location / {
-    proxy_pass "http://127.0.0.1:8080";
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection 'upgrade';
-    proxy_cache_bypass $http_upgrade;
-  }
-}
-```
-
+- sudo rm /etc/nginx/sites-enabled/default
+- sudo ln -s ~/heylisten/socket.rch.app.conf /etc/nginx/sites-enabled/socket.rch.app.conf
 - sudo service nginx restart
 - cd ~/repo_name
-- sudo su root
 - sudo npm install -g pm2
 - pm2 start server.js --watch
 - pm2 startup
 - pm2 save
 - sudo snap install --classic certbot
 - sudo ln -s /snap/bin/certbot /usr/bin/certbot
-
 
 # Automated Startup Scripts
 
