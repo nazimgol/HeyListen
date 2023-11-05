@@ -4,7 +4,7 @@ A Socket IO App Running on a Google Cloud Platform VM.
 
 # Build new server on code push
 
-Use Github to push new server code to remote. //
+Use Github to push new server code to remote.
 
 pm2 takes args to watch for file changes and restart programs: https://pm2.keymetrics.io/docs/usage/quick-start/
 
