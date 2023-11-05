@@ -12,8 +12,7 @@ pm2 restart app on server restart
 https://stackoverflow.com/questions/33638451/pm2-doesnt-launch-my-nodejs-app-after-server-restart
 
 # VM Setup Commands
-
-Article: https://javascript.plainenglish.io/deploy-a-node-js-server-using-google-cloud-compute-engine-87268919de20
+- Article: https://javascript.plainenglish.io/deploy-a-node-js-server-using-google-cloud-compute-engine-87268919de20
 
 Comands for Ubuntu 20 LTS
 
@@ -44,6 +43,9 @@ Comands for Ubuntu 20 LTS
 ## Client
 - git remote add server root@socket.rch.app:~/heylisten.git
 - git push server main
+
+# Github Workflow to Push Using SSH to Remote Repo
+- https://dev.to/s1hofmann/github-actions-ssh-deploy-setup-l7h
 
 # Automated Startup Scripts
 
