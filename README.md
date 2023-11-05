@@ -20,8 +20,7 @@ Comands for Ubuntu 20 LTS
 - sudo apt-get -y update
 - sudo apt-get install -y nodejs npm
 - sudo apt install git
-- git clone git_repo_name
-- cd repo_name
+- See `Version Control` section below
 - npm install
 - sudo apt-get install -y nginx
 - sudo rm /etc/nginx/sites-enabled/default
@@ -34,6 +33,17 @@ Comands for Ubuntu 20 LTS
 - pm2 save
 - sudo snap install --classic certbot
 - sudo ln -s /snap/bin/certbot /usr/bin/certbot
+
+# Version Control
+
+## Server
+- mkdir heylisten.git
+- cd heylisten.git
+- git --bare init
+
+## Client
+- git remote add origin root@socket.rch.app:~/heylisten.git
+- git push origin main
 
 # Automated Startup Scripts
 
