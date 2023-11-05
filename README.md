@@ -42,8 +42,8 @@ Comands for Ubuntu 20 LTS
 - git --bare init
 
 ## Client
-- git remote add origin root@socket.rch.app:~/heylisten.git
-- git push origin main
+- git remote add server root@socket.rch.app:~/heylisten.git
+- git push server main
 
 # Automated Startup Scripts
 
