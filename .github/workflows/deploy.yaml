@@ -33,7 +33,12 @@ jobs:
         with:
           command: |
             touch text.txt
-            touch text2.txt
           host: ${{ secrets.DEPLOY_HOST }}
           user: ${{ secrets.DEPLOY_USER }}
           key: ${{ secrets.DEPLOY_KEY }}
+      
+      - name: Run Second Command
+        run: | 
+          echo "${{ secrets.DEPLOY_KEY }}" > id_rsa
+          chmod 600 id_rsa
+          ssh -i id_rsa ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "touch sam.txt"
