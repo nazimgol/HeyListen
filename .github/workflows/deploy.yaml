@@ -10,12 +10,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
+          
       - name: Install npm dependencies
         run: npm install
+        
       - name: SSH Deploy
         uses: easingthemes/ssh-deploy@v2.1.4
         env:
@@ -24,6 +27,7 @@ jobs:
           REMOTE_USER: ${{ secrets.DEPLOY_USER }}
           TARGET: ${{ secrets.DEPLOY_TARGET }}
           ARGS: -rlgoDzvc --delete
+          
       - name: Run Deploy Command
         uses: fifsky/ssh-action@master
         with:
