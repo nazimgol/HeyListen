@@ -11,17 +11,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Run Deploy Command
-        uses: fifsky/ssh-action@master
-        with:
-          command: |
-            touch text.txt
-          host: ${{ secrets.DEPLOY_HOST }}
-          user: ${{ secrets.DEPLOY_USER }}
-          key: ${{ secrets.DEPLOY_KEY }}
+      - name: Add SSH key
+        env:
+            SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+            mkdir -p /home/runner/.ssh
+            ssh-keyscan ${{ secrets.DEPLOY_HOST }} >> /home/runner/.ssh/known_hosts
+            echo "${{ secrets.DEPLOY_KEY }}" > /home/runner/.ssh/github_actions
+            chmod 600 /home/runner/.ssh/github_actions
+            ssh-agent -a $SSH_AUTH_SOCK > /dev/null	
+            ssh-add /home/runner/.ssh/github_actions
 
-      - name: Run Deploy Script on Remote
+      - name: Call Remote Deploy Script
         run: | 
-          echo "${{ secrets.DEPLOY_KEY }}" > id_rsa
-          chmod 600 id_rsa
-          ssh -i id_rsa ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "${{ secrets.DEPLOY_CMD }}"
+          ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "${{ secrets.DEPLOY_CMD }}"
