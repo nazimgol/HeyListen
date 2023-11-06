@@ -24,5 +24,12 @@ jobs:
           REMOTE_USER: ${{ secrets.DEPLOY_USER }}
           TARGET: ${{ secrets.DEPLOY_TARGET }}
           ARGS: -rlgoDzvc --delete
-      - name: Run Command
-        run: echo "${{ secrets.DEPLOY_KEY }}" | ssh -i /dev/stdin ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "touch text.txt"
+      - name: Run Deploy Command
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
+            touch text.txt
+            touch text2.txt
+          host: ${{ secrets.DEPLOY_HOST }}
+          user: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_KEY }}
