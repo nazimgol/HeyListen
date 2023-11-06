@@ -1,6 +1,6 @@
 # heylisten
 
-A Socket IO App Running on a Google Cloud Platform VM. //
+A Socket IO App Running on a Google Cloud Platform VM.
 
 # Build new server on code push
 
