@@ -9,27 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-          
-      - name: Install npm dependencies
-        run: npm install
-        
-      - name: SSH Deploy
-        uses: easingthemes/ssh-deploy@v2.1.4
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
-          REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
-          REMOTE_USER: ${{ secrets.DEPLOY_USER }}
-          TARGET: ${{ secrets.DEPLOY_TARGET }}
-          ARGS: -rlgoDzvc --delete
-      
       - name: Run Deploy Script on Remote
         run: | 
           echo "${{ secrets.DEPLOY_KEY }}" > id_rsa
           chmod 600 id_rsa
-          ssh -i id_rsa ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "touch sam.txt"
+          ssh -i id_rsa ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "${{ secrets.DEPLOY_COMMAND }}"
