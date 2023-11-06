@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
       - name: Run Deploy Script on Remote
         run: | 
           echo "${{ secrets.DEPLOY_KEY }}" > id_rsa
