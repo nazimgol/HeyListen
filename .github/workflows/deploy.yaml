@@ -10,6 +10,32 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      
+      - name: SSH Deploy
+        uses: easingthemes/ssh-deploy@v2.1.4
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+          REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
+          REMOTE_USER: ${{ secrets.DEPLOY_USER }}
+          TARGET: ${{ secrets.DEPLOY_TARGET }}
+          ARGS: -rlgoDzvc --delete
+
+      - name: Run Deploy Command
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
+            touch text.txt
+          host: ${{ secrets.DEPLOY_HOST }}
+          user: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_KEY }}
+
+      - name: Run Second Command
+      - name: Run Deploy Script on Remote
+        run: | 
+          echo "${{ secrets.DEPLOY_KEY }}" > id_rsa
+          chmod 600 id_rsa
+          ssh -i id_rsa ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "touch sam.txt"
+          
       - name: Run Deploy Script on Remote
         run: | 
           echo "${{ secrets.DEPLOY_KEY }}" > id_rsa
