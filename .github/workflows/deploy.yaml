@@ -25,4 +25,4 @@ jobs:
           TARGET: ${{ secrets.DEPLOY_TARGET }}
           ARGS: -rlgoDzvc --delete
       - name: Run Command
-        run: echo ${{ secrets.DEPLOY_KEY }} | ssh -i /dev/stdin ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "touch text.txt"
+        run: echo "${{ secrets.DEPLOY_KEY }}" | ssh -i /dev/stdin ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "touch text.txt"
