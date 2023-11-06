@@ -1,6 +1,6 @@
 # heylisten
 
-A Socket IO App Running on a Google Cloud Platform VM. //
+A Socket IO App Running on a Google Cloud Platform VM.
 
 # Server could Pull Repo on Commit
 - https://github.com/marketplace/actions/ssh-remote-commands
