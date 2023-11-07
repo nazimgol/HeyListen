@@ -20,6 +20,7 @@ A Socket IO App Running on a Google Cloud Platform VM.
 ## Install Certbot Certificate
 - sudo snap install --classic certbot
 - sudo ln -s /snap/bin/certbot /usr/bin/certbot
+- certbot --noninteractive --nginx --agree-tos --cert-name rch.app -d socket.rch.app -d www.socket.rch.app -m rhshadowgreen@gmail.com
 
 ## Start Server
 - cd ~/heylisten
