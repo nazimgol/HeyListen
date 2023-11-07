@@ -38,7 +38,7 @@ A Socket IO App Running on a Google Cloud Platform VM.
 
 ## Start Server
 - cd ~/heylisten
-- pm2 start server.js
+- pm2 start server.mjs
 - pm2 startup
 - pm2 save
 
