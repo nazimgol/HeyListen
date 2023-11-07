@@ -39,6 +39,11 @@ A Socket IO App Running on a Google Cloud Platform VM.
 - touch authorized_keys
 - Copy content of `id_rsa.pub` to `authorized_keys`
 
+## Github Action Secrets
+- DEPLOY_HOST: rch.app.
+- DEPLOY_KEY: private key from generated key pair.
+- DEPLOY_USER: rhshadowgreen (user on server).
+
 # Archive
 
 ## Automated Startup Scripts
