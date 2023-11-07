@@ -13,7 +13,10 @@ A Socket IO App Running on a Google Cloud Platform VM.
 
 ## Install Software
 - sudo apt-get -y update
-- sudo apt-get install -y nodejs npm
+- Install NVM
+  - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+- nvm install 18 && nvm use 18
+- sudo apt-get install -y npm
 - sudo apt install git
 - sudo apt-get install -y nginx
 - sudo npm install -g pm2
