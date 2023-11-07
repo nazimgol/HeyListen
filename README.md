@@ -2,7 +2,7 @@
 
 A Socket IO App Running on a Google Cloud Platform VM.
 
-# Setup Ubuntu 20 LTS VM
+# Setup Ubuntu LTS (20 or 22)
 
 ## Add Pub Key to Server
 - ssh-keygen -m PEM -t rsa -b 4096 -C "rhshadowgreen@gmail.com"
