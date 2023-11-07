@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Add SSH key
+      - name: Add Known Host
         run: |
             mkdir -p /home/runner/.ssh
             ssh-keyscan ${{ secrets.DEPLOY_HOST }} >> /home/runner/.ssh/known_hosts
@@ -20,4 +20,4 @@ jobs:
         run: | 
           echo "${{ secrets.DEPLOY_KEY }}" > id_rsa
           chmod 600 id_rsa
-          ssh -i id_rsa ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "${{ secrets.DEPLOY_CMD }}"
+          ssh -i id_rsa ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "./deploy.sh"
