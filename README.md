@@ -22,7 +22,7 @@ A Socket IO App Running on a Google Cloud Platform VM.
 - Modify subdomain in server-name field in rch.app.conf
 - git clone https://github.com/strawstack/heylisten.git
 - sudo rm /etc/nginx/sites-enabled/default
-- sudo ln -s ~/heylisten/socket.rch.app.conf /etc/nginx/sites-enabled/socket.rch.app.conf
+- sudo ln -s ~/heylisten/rch.app.conf /etc/nginx/sites-enabled/rch.app.conf
 - sudo service nginx restart
 
 ## Install Certbot Certificate
