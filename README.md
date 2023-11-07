@@ -7,9 +7,9 @@ A Socket IO App Running on a Google Cloud Platform VM.
 ## Add Pub Key to Server
 - ssh-keygen -m PEM -t rsa -b 4096 -C "rhshadowgreen@gmail.com"
 - Get `id_rsa.pub` to the server
-- mv ~/id_rsa.pub ~/.ssh/id_rsa.pub
-- touch authorized_keys
-- Copy content of `id_rsa.pub` to `authorized_keys`
+  - mv ~/id_rsa.pub ~/.ssh/id_rsa.pub
+  - touch authorized_keys
+  - Copy content of `id_rsa.pub` to `authorized_keys`
 
 ## Install Software
 - sudo apt-get -y update
