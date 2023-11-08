@@ -47,9 +47,9 @@ A Socket IO App Running on a Google Cloud Platform VM.
 - chmod u+x ~/deploy.sh
 
 ## Github Action Secrets
-- DEPLOY_HOST: rch.app.
+- DEPLOY_HOST: socket.rch.app.
 - DEPLOY_KEY: private key from generated key pair.
-- DEPLOY_USER: rhshadowgreen (user on server).
+- DEPLOY_USER: root or username.
 
 # Archive
 
