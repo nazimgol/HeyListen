@@ -4,9 +4,9 @@ A Socket IO App Running on a Google Cloud Platform VM.
 
 # Making this Repo Easy to Use
 1. Instructions to spin up Linode $5 server and seed with public key.
-2. Instructions to install two Github Actions:  
-  - `Init` Action that configures a server from bare metal (only runs steps if deploy.sh not present on server root).
-  - `deploy.sh` Action runs on every push triggers `deploy.sh` script to pull new code.
+2. Instructions to install two Github Actions:
+    1. `Init` Action that configures a server from bare metal (only runs steps if deploy.sh not present on server root).
+    2. `deploy.sh` Action runs on every push triggers `deploy.sh` script to pull new code.
 3. Instructions to add necessary Actions' secrets to Github repo.
 4. Every push to the repo with run new code on the server.
 
