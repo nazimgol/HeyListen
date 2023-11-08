@@ -1,22 +1,16 @@
 #! /bin/bash
 
-# Setup
-
-# chmod u+x deploy.sh
-# ./deploy.sh
-
-# git config --global user.name "Github Actions"
-# git config --global user.email "actions@github.com"
-# git clone https://github.com/strawstack/heylisten.git
-
-# pm2 start server.js --watch
-# pm2 startup
-# pm2 save
+# Arguments
+# 1 GITHUB_USER
+# 2 REPO_NAME
 
 git config --global user.name "Github Actions"
 git config --global user.email "actions@github.com"
-rm -rf heylisten
-git clone https://github.com/strawstack/heylisten.git
-cd heylisten
+
+rm -rf $2
+
+git clone https://github.com/$1/$2.git
+cd $2
+
 npm install
-pm2 restart server.js
+pm2 restart server.mjs
