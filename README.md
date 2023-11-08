@@ -83,3 +83,8 @@ A Socket IO App Running on a Google Cloud Platform VM.
 
 ## pm2 restart app on server restart
 - https://stackoverflow.com/questions/33638451/pm2-doesnt-launch-my-nodejs-app-after-server-restart
+
+# Add SSH Key to Actions
+- https://maxschmitt.me/posts/github-actions-ssh-key
+
+
