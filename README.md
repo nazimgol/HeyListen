@@ -10,7 +10,7 @@ A Socket IO App Running on a Google Cloud Platform VM.
 3. Instructions to add necessary Actions secrets to Github repo.
 4. Every push to the repo will now deploy new code to the server.
 
-# Setup Ubuntu LTS (20 or 22)
+# Setup Ubuntu 22 LTS
 
 ## Add Pub Key to Server
 - ssh-keygen -m PEM -t rsa -b 4096 -C "rhshadowgreen@gmail.com"
