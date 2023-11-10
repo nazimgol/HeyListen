@@ -1,23 +1,12 @@
 name: SSH Deploy
-
-on:
-  push:
-    branches: [ main ]
-
+on: [push]
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Add Known Host
-        run: |
-            mkdir -p /home/runner/.ssh
-            ssh-keyscan ${{ secrets.DEPLOY_HOST }} >> /home/runner/.ssh/known_hosts
-
-      - name: Call Remote Deploy Script
-        run: | 
-          echo "${{ secrets.DEPLOY_KEY }}" > id_rsa
-          chmod 600 id_rsa
-          ssh -i id_rsa ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "./deploy.sh"
+      - name: Deploy Server Step
+        uses: strawstack/ssh-node-server-setup@main
+        with:
+          server-host: ${{ secrets.SERVER_HOST }}
+          user-email: ${{ secrets.USER_EMAIL }}
+          ssh-key: ${{ secrets.SSH_KEY }}
